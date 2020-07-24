@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="023d13ad-ce9d-478f-94d3-8acd09344ae5" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="D:/apache/apache-maven-3.6.3" />
+        <option name="userSettingsFile" value="D:\apache\apache-maven-3.6.3\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="jreName" value="#JAVA_INTERNAL" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1f6wIZneC7GcZbOTAOkjvYjx552" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="C:/001-workspace/00-p-ros/00-ros-file-service" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RunManager" selected="Spring Boot.FilepushApplication">
+    <configuration name="FilepushApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="filepush" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.filepush.FilepushApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SearchApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="search" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.search.SearchApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="023d13ad-ce9d-478f-94d3-8acd09344ae5" name="Default Changelist" comment="" />
+      <created>1595551770835</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1595551770835</updated>
+      <workItem from="1595551774602" duration="960000" />
+      <workItem from="1595591588706" duration="1470000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="452" y="100" key="#Project_Structure" timestamp="1595552452376">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="452" y="100" key="#Project_Structure/0.0.1920.1050@0.0.1920.1050" timestamp="1595552452376" />
+    <state x="690" y="222" key="FileChooserDialogImpl" timestamp="1595592264503">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="690" y="222" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1595592264503" />
+    <state x="545" y="152" width="1215" height="746" key="new project wizard" timestamp="1595595331823">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="545" y="152" width="1215" height="746" key="new project wizard/0.0.1920.1050@0.0.1920.1050" timestamp="1595595331823" />
+  </component>
+</project>
