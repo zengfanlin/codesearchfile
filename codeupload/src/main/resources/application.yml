@@ -1,0 +1,9 @@
+
+spring:
+  application:
+    name: codeupload
+  elasticsearch:
+    jest:
+      uris: http://172.22.122.24:9200
+  jmx:
+    enabled: false
