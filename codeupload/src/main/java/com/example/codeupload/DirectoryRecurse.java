@@ -1,5 +1,7 @@
 package com.example.codeupload;
 
+import cn.hutool.core.io.FileTypeUtil;
+import cn.hutool.crypto.SecureUtil;
 import com.alibaba.fastjson.JSONObject;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -8,7 +10,6 @@ import io.searchbox.core.Index;
 import io.searchbox.core.Search;
 import io.searchbox.core.SearchResult;
 import lombok.extern.slf4j.Slf4j;
-import net.sf.jmimemagic.*;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -59,7 +60,7 @@ public class DirectoryRecurse {
     private JSONObject isIndex(File file) {
         JSONObject result = new JSONObject();
         //用MD5生成文件指纹,搜索该指纹是否已经索引
-        String fileFingerprint = Md5CaculateUtil.getMD5(file);
+        String fileFingerprint = SecureUtil.md5(file);
         result.put("MD5", fileFingerprint);
         SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
         searchSourceBuilder.query(QueryBuilders.termQuery("MD5", fileFingerprint));
@@ -83,26 +84,7 @@ public class DirectoryRecurse {
         //忽略掉临时文件，以~$起始的文件名
         if (file.getName().startsWith("~$")) return;
         String fileType = null;
-        switch (method) {
-            case "magic":
-                Magic parser = new Magic();
-                try {
-                    MagicMatch match = parser.getMagicMatch(file, false);
-                    fileType = match.getMimeType();
-                } catch (MagicParseException e) {
-                    //log.error("{}",e.getLocalizedMessage());
-                } catch (MagicMatchNotFoundException e) {
-                    //log.error("{}",e.getLocalizedMessage());
-                } catch (MagicException e) {
-                    //log.error("{}",e.getLocalizedMessage());
-                }
-                break;
-            case "ext":
-                String filename = file.getName();
-                String[] strArray = filename.split("\\.");
-                int suffixIndex = strArray.length - 1;
-                fileType = strArray[suffixIndex];
-        }
+
         switch (fileType) {
             case "text/plain":
             case "java":
@@ -118,10 +100,9 @@ public class DirectoryRecurse {
                 //1. 给ES中索引(保存)一个文档
                 Article article = new Article();
                 article.setTitle(file.getName());
-                article.setAuthor(file.getParent());
                 article.setPath(file.getPath());
                 article.setContent(readToString(file, fileType));
-                article.setMD5(isIndexResult.getString("MD5"));
+                article.setMd5(isIndexResult.getString("MD5"));
                 //2. 构建一个索引
                 Index index = new Index.Builder(article).index("diskfile").type("files").build();
                 try {

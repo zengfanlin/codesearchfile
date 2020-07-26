@@ -1,9 +1,12 @@
-
 spring:
   application:
     name: codeupload
   elasticsearch:
     jest:
-      uris: http://172.22.122.24:9200
-  jmx:
-    enabled: false
+      uris: http://192.168.32.171:9200
+file:
+  index:
+    name: idx_code
+    type: type_codefile
+    rootpath: D:\00-workspace\01_java\codesearchfile
+    allowfiletype: .java.xml.yml.md

@@ -3,6 +3,7 @@ package com.example.codeupload;
 import io.searchbox.client.JestClient;
 import io.searchbox.client.JestClientFactory;
 import io.searchbox.client.config.HttpClientConfig;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -13,15 +14,22 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 public class BeanConfig {
+    @Value("${spring.elasticsearch.jest.uris}")
+    String url;
+
     @Bean
     public JestClient jestClient() {
         JestClientFactory factory = new JestClientFactory();
         factory.setHttpClientConfig(
-                new HttpClientConfig.Builder("http://172.22.122.24:9200")
+                new HttpClientConfig.Builder(url)
                         .multiThreaded(true)
                         .defaultMaxTotalConnectionPerRoute(2)
                         .maxTotalConnection(10)
                         .build());
         return factory.getObject();
+    }
+    @Bean
+    public Uploader getUploader(){
+        return new Uploader();
     }
 }
