@@ -1,16 +1,11 @@
 package com.example.codeupload;
 
 import cn.hutool.extra.spring.SpringUtil;
-import io.searchbox.client.JestClient;
-
 import org.slf4j.Logger;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Import;
 
-import java.io.IOException;
 
 
 @SpringBootApplication

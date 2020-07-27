@@ -3,10 +3,10 @@ spring:
     name: codeupload
   elasticsearch:
     jest:
-      uris: http://192.168.32.171:9200
+      uris: http://172.22.122.24:9200
 file:
   index:
-    name: idx_code
+    name: rosdb
     type: type_codefile
-    rootpath: D:\00-workspace\01_java\codesearchfile
+    rootpath: D:\001-workspace\test\codesearch
     allowfiletype: .java.xml.yml.md
