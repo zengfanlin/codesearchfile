@@ -1,14 +1,14 @@
 package com.example.search.controller;
 
-import com.example.search.model.Article;
+import com.example.search.model.CodeDocment;
 import com.example.search.services.SearchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -22,9 +22,9 @@ public class fileController {
     SearchService service;
 
     @GetMapping("/api/file")
-    public ModelAndView index() throws IOException {
-        List<Article> list = service.getList("Uploader", 0, 10);
-        return new ModelAndView("file/article", "articlelist", list);
+    public List index(@RequestParam(value = "word") String word) throws IOException {
+        List<CodeDocment> list = service.getList(word, 0, 999);
+        return list;
     }
 
 }

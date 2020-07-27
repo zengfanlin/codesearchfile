@@ -4,18 +4,28 @@
     <meta charset="UTF-8"/>
     <title th:text="搜索结果">Docs</title>
     <!--默认拼接前缀路径,开头请勿再添加斜杠,防止部署运行报错！-->
-<!--    <script th:replace="common/head::static"></script>-->
+    <!--<script th:replace="common/head::static"></script>-->
+
 </head>
 <body>
 
-<div th:each="artticle:${articlelist}" >
+<!--<div th:each="artticle:${articlelist}">-->
 
-    名称：<input type="text" th:value="${artticle.getTitle()}"/>
-    路径：<input type="text" th:value="${artticle.getPath()}"/>
+<!--    名称：<input type="text" th:value="${artticle.getTitle()}"/>-->
+<!--    路径：<input type="text" th:value="${artticle.getPath()}"/>-->
+<!--    <pre class="brush: java">-->
 
-</div>
+<!--    public class Person {-->
 
-<script th:inline="javascript">
+<!--        }-->
+<!--    </pre>-->
+<!--</div>-->
+
+
+<script type="text/javascript" src="syntaxhighlighter/scripts/shCore.js"></script>
+<script type="text/javascript" src="syntaxhighlighter/scripts/shBrushJava.js"></script>
+<script type="text/javascript">
+    SyntaxHighlighter.all()
     //通过内联表达式获取用户信息
     // var userList = [[${userList}]];
     // console.log(userList)

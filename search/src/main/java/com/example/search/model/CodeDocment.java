@@ -9,7 +9,7 @@ import lombok.Data;
  * @time: 2020-7-25 10:49
  */
 @Data
-public class Article {
+public class CodeDocment {
     @JestId
     private String id;
     private String title;
