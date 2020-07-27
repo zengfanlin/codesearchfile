@@ -3,25 +3,14 @@ spring:
    name: search
   elasticsearch:
     jest:
-      uris: http://172.22.122.24:9200
+      uris: http://192.168.32.171:9200
   thymeleaf:
     cache: false #关闭缓存
     prefix: classpath:/templates/
+  devtools.restart.enabled: true
 file:
   index:
-    name: rosdb
+    name: idx_code
     type: type_codefile
-#management.endpoints.jmx.exposure.include=*
-#management.endpoints.web.exposure.include=*
-#management.endpoint.health.show-details=always
-## spring cloud access&secret config
-## 可以访问如下地址查看: https://usercenter.console.aliyun.com/#/manage/ak
-#alibaba.cloud.access-key=****
-#alibaba.cloud.secret-key=****
-## 应用服务 WEB 访问端口
-#server.port=8080
-## Actuator Web 访问端口
-#management.server.port=8081
-
 server:
   port: 8089

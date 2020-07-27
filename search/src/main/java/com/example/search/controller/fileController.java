@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @description:
@@ -22,9 +24,12 @@ public class fileController {
     SearchService service;
 
     @GetMapping("/api/file")
-    public List index(@RequestParam(value = "word") String word) throws IOException {
-        List<CodeDocment> list = service.getList(word, 0, 999);
-        return list;
+    public Object index(@RequestParam(value = "word") String word) throws IOException {
+        List<CodeDocment> list = service.getList(word, 0, 200);
+        Map<String, Object> map = new HashMap<String, Object>();
+
+        map.put("data", list);
+        return map;
     }
 
 }
