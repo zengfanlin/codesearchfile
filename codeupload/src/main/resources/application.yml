@@ -6,7 +6,7 @@ spring:
       uris: http://172.22.122.24:9200
 file:
   index:
-    name: rosdb
+    name: roscode
     type: type_codefile
     rootpath: D:\001-workspace\test\codesearch
-    allowfiletype: .java.xml.yml.md
+    allowfiletype: .java.xml.yml.md.pem
