@@ -7,16 +7,22 @@ put  http://192.168.32.171:9200/rosdb?pretty
                     "type": "keyword"
                 },
                 "title": {
-                    "type": "keyword"
+                    "type": "text",
+                    "analyzer": "simple",
+                    "search_analyzer": "simple"
                 },
                 "path": {
-                    "type": "keyword"
+                    "type": "text",
+                    "analyzer": "simple",
+                    "search_analyzer": "simple"
                 },
                 "md5": {
                     "type": "keyword"
                 },
                 "content": {
-                    "type": "text"
+                    "type": "text",
+                    "analyzer": "simple",
+                    "search_analyzer": "simple"
                 }
             }
         }

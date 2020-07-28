@@ -3,14 +3,14 @@ spring:
    name: search
   elasticsearch:
     jest:
-      uris: http://172.22.122.24:9200
+      uris: http://192.168.32.171:9200
   thymeleaf:
     cache: false #关闭缓存
     prefix: classpath:/templates/
   devtools.restart.enabled: true
 file:
   index:
-    name: rosdb
+    name: idx_code
     type: type_codefile
 server:
   port: 8089

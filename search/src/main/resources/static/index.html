@@ -55,7 +55,7 @@
 
 </body>
 <script type="text/javascript">$.SyntaxHighlighter.init({
-    'wrapLines':false,
+    'wrapLines': true,
     'lineNumbers': true
 });</script>
 <script type="text/javascript">
@@ -109,7 +109,9 @@
 
     function format(d) {
         var $content = $('<div><pre class="highlight">' + d.content + '</pre></div>');
-        $content.syntaxHighlight(); // will highlight the code block found inside
+        $content.syntaxHighlight({
+            'lineNumbers': true
+        }); // will highlight the code block found inside
 
         // `d` is the original data object for the row
         return $content;
