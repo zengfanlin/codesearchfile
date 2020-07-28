@@ -6,16 +6,12 @@
     <link rel="stylesheet" href="jquery.dataTables.min.css">
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="dataTables.bootstrap.min.css" rel="stylesheet"/>
-    <link href="syntaxhighlighter/styles/style.min.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="syntaxhighlighter/prettify/prettify.css">
     <link rel="stylesheet" href="default.min.css">
-    <link rel="stylesheet" href="syntaxhighlighter/styles/theme-balupton.css">
     <script src="jquery-3.5.1.js"></script>
     <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
     <script src="jquery.dataTables.min.js" type="text/javascript"></script>
-    <script src="syntaxhighlighter/scripts/jquery.syntaxhighlighter.min.js"></script>
-    <script src="syntaxhighlighter/prettify/prettify.js"></script>
-
+    <link rel="stylesheet" href="sh3/styles/shCore.css">
+    <link rel="stylesheet" href="sh3/styles/shThemeDefault.css">
     <style type="text/css" class="init">
         td.details-control {
             background: url('details_open.png') no-repeat center center;
@@ -25,6 +21,8 @@
             background: url('details_close.png') no-repeat center center;
         }
     </style>
+    <script src="sh3/scripts/shCore.js"></script>
+    <script src="sh3/scripts/shAutoloader.js"></script>
 
 </head>
 <body>
@@ -47,20 +45,34 @@
         </tr>
         </thead>
         <tbody>
-
         </tbody>
-
     </table>
 </div>
 
 </body>
-<script type="text/javascript">$.SyntaxHighlighter.init({
-    'wrapLines': true,
-    'lineNumbers': true
-});</script>
 <script type="text/javascript">
     var table;
     $(document).ready(function () {
+        function path()
+        {
+            var args = arguments,result = [];
+
+            for(var i = 0; i < args.length; i++)
+                result.push(args[i].replace('@', 'scripts/'));
+
+            return result
+        };
+        //去掉工具栏（小问号）
+        SyntaxHighlighter.defaults['toolbar']=false;
+        SyntaxHighlighter.autoloader.apply(null, path(
+            'java                   @shBrushJava.js',
+            'sql                    @shBrushSql.js',
+            'xml xhtml xslt html    @shBrushXml.js'
+        ));
+
+        SyntaxHighlighter.all();
+
+
         table = $('#table').DataTable({
             "ajax": {
                 "url": "api/file?",
@@ -108,7 +120,7 @@
     });
 
     function format(d) {
-        var $content = $('<div><pre class="highlight">' + d.content + '</pre></div>');
+        var $content = $('<div><pre class="brush: java">' + d.content + '</pre></div>');
         $content.syntaxHighlight({
             'lineNumbers': true
         }); // will highlight the code block found inside
